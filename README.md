@@ -7,3 +7,6 @@ The same applies to the 2018 Genesis image. <br>
 You can download both images below:<br>
 https://xtremission.s3-us-west-2.amazonaws.com/Hyundai+Genesis+Radio/2015+Genesis.zip<br>
 https://xtremission.s3-us-west-2.amazonaws.com/Genesis+G80+Radio/2018Genesis.zip<br>
+<br>
+<br>
+Note: I'm not the developer of these packages, and code questions will likely be unresolved as I can barely code my way out of a wet paper bag. 
