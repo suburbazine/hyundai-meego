@@ -1,0 +1,234 @@
+/*
+==============================================================================
+
+Project:        MOST NetServices V3 for INIC
+Module:         Table of supported firmware and hardware versions
+File:           versions.tab
+Version:        3.0.x-SR-2  (modified)
+Language:       C
+Author(s):      S.Semmler
+Date:           31.January.2012
+
+FileGroup:      Layer I
+Customer ID:    34C40C060300xx.HYUNDAI.DH
+FeatureCode:    FCR1
+------------------------------------------------------------------------------
+
+                (c) Copyright 1998-2012
+                SMSC
+                All Rights Reserved
+
+------------------------------------------------------------------------------
+
+
+
+Modifications
+~~~~~~~~~~~~~
+Date            By      Description
+2012-06-12      SMSC    Added version info for OS81110, FW V9.2.3
+==============================================================================
+
+Codes for the 4th version number:
+
+00       = unused
+01 .. 99 = Step 1 .. 99
+
+A0       = unused
+A1 .. AF = Alpha 1 .. 15
+
+B0       = unused
+B1 .. BF = Beta  1 .. 15
+
+C0 .. CF = unused
+
+D0       = Distrib
+D1 .. DF = Release Candidate (Distrib) 1 .. 15
+
+E0       = Errata / Service Release (the 3rd version number reflects the
+           Service Release Number as in V1.x)
+E1 .. EF = Release Candidate (Service Release) 1 .. 15
+
+F0 .. FF = unused
+
+*/
+
+
+/*! \file
+  * \brief      Table of supported firmware and hardware versions
+  */
+
+
+#ifdef MNS_IGNORE_VERSION_INFO
+    /*! OS81082 any Rev. */
+    #define _OS81082_ANY                { 0x08, 0x10, 0x82, 0xFF, 0xFF }
+    /*! OS81092 any Rev. */
+    #define _OS81092_ANY                { 0x08, 0x10, 0x92, 0xFF, 0xFF }
+    /*! OS81110 any Rev. */
+    #define _OS81110_ANY                { 0x08, 0x11, 0x10, 0xFF, 0xFF }
+#else
+    /*! OS81082 Rev. B */
+    #define _OS81082B                   { 0x08, 0x10, 0x82, 0x92, 0x03 }
+    /*! OS81082 Rev. C */
+    #define _OS81082C                   { 0x08, 0x10, 0x82, 0x92, 0x05 }
+    /*! OS81092 Rev. C */
+    #define _OS81092C                   { 0x08, 0x10, 0x92, 0x82, 0x03 }
+    /*! OS81110 Rev. C */
+    #define _OS81110C                   { 0x08, 0x11, 0x10, 0x10, 0x03 }
+    /*! OS81110 Rev. D */
+    #define _OS81110D                   { 0x08, 0x11, 0x10, 0x10, 0x04 }
+#endif
+
+/*! helper macro for termination of the table @see MNS_VER_TERMINATE */
+#define CHIP_TERM                       { 0x00, 0x00, 0x00, 0x00, 0x00 }
+
+#ifdef MNS_IGNORE_VERSION_INFO
+    /*! Firmware V1.x.x */
+    #define FW_V_01_XX_XX               { 0x01, 0xFF, 0xFF }
+
+    /*! Firmware V0.x.x */
+    #define FW_V_00_XX_XX               { 0x00, 0xFF, 0xFF }
+
+    /*! Firmware Vx.x.x */
+    #define FW_V_XX_XX_XX               { 0xFF, 0xFF, 0xFF }
+#else
+
+    /*! Firmware V0.x.x */
+    #define FW_V_00_XX_XX               { 0x00, 0xFF, 0xFF }
+
+    /*! Firmware V0.90.x */
+    #define FW_V_00_90_XX               { 0x00, 0x90, 0xFF }
+
+    /*! Firmware V0.99.x */
+    #define FW_V_00_99_XX               { 0x00, 0x99, 0xFF }
+
+    /*! Firmware V1.02.x */
+    #define FW_V_01_02_XX               { 0x01, 0x02, 0xFF }
+
+    /*! Firmware V1.3.x */
+    #define FW_V_01_03_XX               { 0x01, 0x03, 0xFF }
+
+    /*! Firmware V1.5.0 */
+    #define FW_V_01_05_XX               { 0x01, 0x05, 0xFF }
+
+    /*! Firmware V1.6.2 */
+    #define FW_V_01_06_02               { 0x01, 0x06, 0x02 }
+
+    /*! Firmware V1.6.3 */
+    #define FW_V_01_06_03               { 0x01, 0x06, 0x03 }
+
+    /*! Firmware V1.6.x */
+    #define FW_V_01_06_XX               { 0x01, 0x06, 0xFF }
+    
+    /*! Firmware V9.2.3 */
+    #define FW_V_09_02_03               { 0x09, 0x02, 0x03 }
+    
+    /*! Firmware V9.2.13 */
+    #define FW_V_09_02_13               { 0x09, 0x02, 0x13 }
+
+    /*! Firmware V9.2.23 */
+    #define FW_V_09_02_23               { 0x09, 0x02, 0x23 }
+
+    /*! Firmware V9.2.33 */
+    #define FW_V_09_02_33               { 0x09, 0x02, 0x33 }
+#endif
+
+/*! helper macro for termination of the table @see MNS_VER_TERMINATE */
+#define FW_TERM                         { 0x00, 0x00, 0x00 }
+
+/*! standard feature mask for the OS81082 */
+#define NSF_STD_OS81082         (NSF_E_PHY | NSF_MOST_50 | NSF_LEGACY | NSF_CONN_LABELS)
+/*! standard feature mask for the OS81110 */
+#define NSF_STD_OS81110         (NSF_O_PHY | NSF_MOST_150 | NSF_LEGACY | NSF_CONN_LABELS | NSF_RBD)
+
+
+/*! standard notification mask for the optical physical layer */
+#define NTF_STD_O_PHY     NTF_MASK
+/*! standard notification mask for the electrical physical layer */
+#define NTF_STD_E_PHY     (NTF_MASK & ~NTF_ATTENUATION)
+
+
+#ifdef MNS_IGNORE_VERSION_INFO
+    /*! OS81082 any Rev. with Firmware V1.x.x */
+    #define OS81082_ANY_V_01_XX_XX _OS81082_ANY, OS81082_ANY, FW_V_01_XX_XX, NTF_STD_E_PHY, NSF_STD_OS81082
+    /*! OS81092 any Rev. with Firmware V1.x.x */
+    #define OS81092_ANY_V_01_XX_XX _OS81092_ANY, OS81092_ANY, FW_V_01_XX_XX, NTF_STD_E_PHY, (NSF_STD_OS81082 | NSF_ROM | NSF_RBD)
+    /*! OS81110 any Rev. with Firmware V0.99.x */
+    #define OS81110_ANY_V_XX_XX_XX _OS81110_ANY, OS81110_ANY, FW_V_XX_XX_XX, (NTF_STD_O_PHY & ~NTF_ATTENUATION & ~NTF_RETRY_OPTS & ~NTF_ABILITY_TO_SEGMENT), NSF_STD_OS81110
+
+#else
+    /*! OS81082 Rev. B with Firmware V1.5.x */
+    #define OS81082B_V_01_05_XX _OS81082B,     OS81082B, FW_V_01_05_XX, NTF_STD_E_PHY, NSF_STD_OS81082
+    /*! OS81082 Rev. C with Firmware V1.5.x */
+    #define OS81082C_V_01_05_XX _OS81082C,     OS81082C, FW_V_01_05_XX, NTF_STD_E_PHY, NSF_STD_OS81082
+    /*! OS81092 Rev. C with Firmware V1.6.x */
+    #define OS81092C_V_01_06_XX _OS81092C,     OS81092C, FW_V_01_06_XX, NTF_STD_E_PHY, (NSF_STD_OS81082 | NSF_ROM | NSF_RBD)
+
+    /*! OS81110 Rev. C with Firmware V0.90.x */
+    #define OS81110C_V_00_90_XX _OS81110C,     OS81110C, FW_V_00_90_XX, (NTF_STD_O_PHY & ~NTF_ATTENUATION & ~NTF_RETRY_OPTS & ~NTF_ABILITY_TO_SEGMENT), NSF_STD_OS81110
+    /*! OS81110 Rev. C with Firmware V0.99.x */
+    #define OS81110C_V_00_99_XX _OS81110C,     OS81110C, FW_V_00_99_XX, (NTF_STD_O_PHY & ~NTF_ATTENUATION & ~NTF_RETRY_OPTS & ~NTF_ABILITY_TO_SEGMENT), NSF_STD_OS81110
+    /*! OS81110 Rev. C with Firmware V1.02.x */
+    #define OS81110C_V_01_02_XX _OS81110C,     OS81110C, FW_V_01_02_XX, (NTF_STD_O_PHY & ~NTF_ATTENUATION & ~NTF_RETRY_OPTS & ~NTF_ABILITY_TO_SEGMENT), NSF_STD_OS81110
+    /*! OS81110 Rev. D with Firmware V0.90.x */
+    #define OS81110D_V_00_90_XX _OS81110D,     OS81110D, FW_V_00_90_XX, (NTF_STD_O_PHY & ~NTF_ATTENUATION & ~NTF_RETRY_OPTS & ~NTF_ABILITY_TO_SEGMENT), NSF_STD_OS81110
+    /*! OS81110 Rev. D with Firmware V0.99.x */
+    #define OS81110D_V_00_99_XX _OS81110D,     OS81110D, FW_V_00_99_XX, (NTF_STD_O_PHY & ~NTF_ATTENUATION & ~NTF_RETRY_OPTS & ~NTF_ABILITY_TO_SEGMENT), NSF_STD_OS81110
+    /*! OS81110 Rev. D with Firmware V1.02.x */
+    #define OS81110D_V_01_02_XX _OS81110D,     OS81110D, FW_V_01_02_XX, (NTF_STD_O_PHY & ~NTF_ATTENUATION & ~NTF_RETRY_OPTS & ~NTF_ABILITY_TO_SEGMENT), NSF_STD_OS81110    
+    /*! OS81110 Rev. D with Firmware V09.02.03 */
+    #define OS81110D_V_09_02_03 _OS81110D,     OS81110D, FW_V_09_02_03, (NTF_STD_O_PHY & ~NTF_ATTENUATION & ~NTF_RETRY_OPTS & ~NTF_ABILITY_TO_SEGMENT), NSF_STD_OS81110
+    /*! OS81110 Rev. D with Firmware V09.02.13 */
+    #define OS81110D_V_09_02_13 _OS81110D,     OS81110D, FW_V_09_02_13, (NTF_STD_O_PHY & ~NTF_ATTENUATION & ~NTF_RETRY_OPTS & ~NTF_ABILITY_TO_SEGMENT), NSF_STD_OS81110
+    /*! OS81110 Rev. D with Firmware V09.02.23 */
+    #define OS81110D_V_09_02_23 _OS81110D,     OS81110D, FW_V_09_02_23, (NTF_STD_O_PHY & ~NTF_ATTENUATION & ~NTF_RETRY_OPTS & ~NTF_ABILITY_TO_SEGMENT), NSF_STD_OS81110
+    /*! OS81110 Rev. D with Firmware V09.02.33 */
+    #define OS81110D_V_09_02_33 _OS81110D,     OS81110D, FW_V_09_02_33, (NTF_STD_O_PHY & ~NTF_ATTENUATION & ~NTF_RETRY_OPTS & ~NTF_ABILITY_TO_SEGMENT), NSF_STD_OS81110
+#endif
+
+/*! helper macro for termination of the table @see MNS_VER_TERMINATE */
+#define CHIP_FW_TERMINATE   CHIP_TERM, 0x00, FW_TERM,       NTF_NONE, NSF_NONE
+
+/*! MOST NetServices Version 3.0.x-SR-2   */
+#define NS_VERSION                             { 0x03, 0x00, 0x05, 0xD0 }
+/*! helper macro for termination of the table @see MNS_VER_TERMINATE */
+#define NS_V_TERM                              { 0x00, 0x00, 0x00, 0x00 }
+
+/*! helper macro for termination of the table */
+#define MNS_VER_TERMINATE                      { CHIP_FW_TERMINATE, NS_V_TERM }
+
+/*! table of valid hardware, firmware and NetServices combinations */
+_CONST MnsVerCheckLine mns_valid_versions[] =
+{
+#ifdef MNS_IGNORE_VERSION_INFO
+  #ifdef _OS81082_PERMIT
+    { OS81082_ANY_V_01_XX_XX, NS_VERSION },
+    { OS81092_ANY_V_01_XX_XX, NS_VERSION },
+  #endif
+
+  #ifdef _OS81110_PERMIT
+    { OS81110_ANY_V_XX_XX_XX, NS_VERSION },
+#endif
+#else
+  #ifdef _OS81082_PERMIT
+    { OS81082B_V_01_05_XX, NS_VERSION },
+    { OS81082C_V_01_05_XX, NS_VERSION },
+    { OS81092C_V_01_06_XX, NS_VERSION },
+  #endif
+
+  #ifdef _OS81110_PERMIT
+    { OS81110C_V_00_90_XX, NS_VERSION },
+    { OS81110D_V_00_90_XX, NS_VERSION },
+    { OS81110C_V_00_99_XX, NS_VERSION },
+    { OS81110D_V_00_99_XX, NS_VERSION },
+    { OS81110C_V_01_02_XX, NS_VERSION },
+    { OS81110D_V_01_02_XX, NS_VERSION },
+    { OS81110D_V_09_02_03, NS_VERSION },
+    { OS81110D_V_09_02_13, NS_VERSION },
+    { OS81110D_V_09_02_23, NS_VERSION },
+	{ OS81110D_V_09_02_33, NS_VERSION },    
+  #endif
+#endif
+    MNS_VER_TERMINATE
+};
+
+

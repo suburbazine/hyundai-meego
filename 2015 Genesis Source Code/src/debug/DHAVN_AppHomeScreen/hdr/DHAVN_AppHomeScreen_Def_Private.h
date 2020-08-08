@@ -1,0 +1,499 @@
+#ifndef DHAVN_APPHOMESCREEN_DEF_PRIVATE_H
+#define DHAVN_APPHOMESCREEN_DEF_PRIVATE_H
+#include <QObject>
+#include <QFileInfo>
+#include <QTextStream>
+#include <QTime>
+#include <unistd.h>
+#include <DHAVN_AppFramework_Logger_Def.h>
+#include <DHAVN_AppHomeScreen_Def.h>
+#include <DHAVN_AppHomeScreen_Log_Def.h>
+
+#define CV_INVALID         0x00000000
+#define CV_KOREA           0x00000001
+#define CV_NORTH_AMERICA   0x00000002
+#define CV_CHINA           0x00000004
+#define CV_GENERAL         0x00000008
+#define CV_MIDDLE_EAST     0x00000010
+#define CV_EUROPE          0x00000020
+#define CV_CANADA          0x00000040
+#define CV_ALL             CV_KOREA | CV_NORTH_AMERICA | CV_CHINA | CV_GENERAL | CV_MIDDLE_EAST | CV_EUROPE | CV_CANADA
+
+#define COUNT_ITEMS_ON_SCREEN 12
+#define COUNT_VIEW_LAYOUT 7
+
+#define PROCESS_EVENT_ON_BUSY   1
+
+#if PROCESS_EVENT_ON_BUSY
+    #define PROCESS_EVENT_CALL qApp->processEvents();  usleep(50*1000);
+#else
+    #define PROCESS_EVENT_CALL
+#endif
+
+#define DataList QList<HSDefP::APP_DATA_T>()
+
+class HSDefP : public QObject
+{
+    Q_OBJECT
+
+    Q_ENUMS( VIEW_ID_T );
+    Q_ENUMS( APP_ID_T );
+    Q_ENUMS( IMG_T );
+    //Q_ENUMS( MAIN_CONSTANTS_T );
+    Q_ENUMS( AV_WIDGET );
+    Q_ENUMS( COLOR_T );
+    Q_ENUMS( ICON_T );
+    Q_ENUMS( APP_DATA_T );
+    Q_ENUMS( FOCUS_INDEX_T );
+    Q_ENUMS( POPUP_TYPE_T );
+
+public:
+    enum VIEW_ID_T
+    {
+        VIEW_ID_MAIN = 0,
+        VIEW_ID_MEDIA,
+        VIEW_ID_SETTINGS,
+        VIEW_ID_SETTINGS_GENERAL,
+        VIEW_ID_BLUELINK,
+        VIEW_ID_BLUELINK_PHONE,
+        VIEW_ID_APPS,
+        VIEW_ID_INFO,
+        VIEW_ID_ENGINEERING_FULL,
+        VIEW_ID_ENGINEERING_SIMPLE,
+        VIEW_ID_ENGINEERING_DYNAMICS,
+        VIEW_ID_MAX,
+        VIEW_ID_INVALID,
+    };
+
+    typedef enum
+    {
+        APP_DATA_INVALID,
+
+        /** String */
+        APP_DATA_STRING_MINIMUM = APP_DATA_INVALID,
+
+        APP_DATA_AUDIO_USB1_TEXT,
+        APP_DATA_AUDIO_USB2_TEXT,
+        APP_DATA_VIDEO_USB1_TEXT,
+        APP_DATA_VIDEO_USB2_TEXT,
+        APP_DATA_PHOTO_USB1_TEXT,
+        APP_DATA_PHOTO_USB2_TEXT,
+        APP_DATA_IPOD1_TEXT,
+        APP_DATA_IPOD2_TEXT,
+
+        APP_DATA_STRING_MAXIMUM,
+
+        /** bool */
+        APP_DATA_AVAILABLE_MINIMUM = APP_DATA_STRING_MAXIMUM,
+
+
+        APP_DATA_AVAILABLE_NAVI,
+        APP_DATA_AVAILABLE_DAB,
+
+        APP_DATA_AVAILABLR_MEDIA,
+
+        APP_DATA_AVAILABLE_JBOX,
+        APP_DATA_AVAILABLE_JBOX_VIDEO,
+        APP_DATA_AVAILABLE_JBOX_AUIDIO,
+        APP_DATA_AVAILABLE_JBOX_IMAGE,
+        APP_DATA_AVAILABLE_USB1,
+        APP_DATA_AVAILABLE_USB1_VIDEO,
+        APP_DATA_AVAILABLE_USB1_AUDIO,
+        APP_DATA_AVAILABLE_USB1_IMAGE,
+        APP_DATA_AVAILABLE_USB2,
+        APP_DATA_AVAILABLE_USB2_VIDEO,
+        APP_DATA_AVAILABLE_USB2_AUDIO,
+        APP_DATA_AVAILABLE_USB2_IMAGE,
+        APP_DATA_AVAILABLE_DISC,
+        APP_DATA_AVAILABLE_DISC_DVD_VIDEO,
+        APP_DATA_AVAILABLE_DISC_VCD,
+        APP_DATA_AVAILABLE_DISC_DVD_AUDIO,
+        APP_DATA_AVAILABLE_DISC_MP3,
+        APP_DATA_AVAILABLE_DISC_CD,
+        APP_DATA_AVAILABLE_IPOD1,
+        APP_DATA_AVAILABLE_IPOD2,
+        APP_DATA_AVAILABLE_AUX,
+        APP_DATA_AVAILABLE_BT,
+        APP_DATA_AVAILABLE_BT_PANDORA,
+        APP_DATA_AVAILABLE_BT_AHA,
+        APP_DATA_AVAILABLE_IBOX_MODEM,
+        APP_DATA_AVAILABLE_PANDORA1,
+        APP_DATA_AVAILABLE_PANDORA2,
+        APP_DATA_AVAILABLE_AHA1,
+        APP_DATA_AVAILABLE_AHA2,
+
+        APP_DATA_AVAILABLE_MAXIMUM,
+
+        /** bool */
+        APP_DATA_ENABLED_MINIMUM = APP_DATA_AVAILABLE_MAXIMUM,
+
+
+        APP_DATA_ENABLED_NAVI,
+
+        APP_DATA_ENABLED_MEDIA,
+
+        /** Media */
+        APP_DATA_ENABLED_MEDIA_VIDEO,
+        APP_DATA_ENABLED_MEDIA_PHOTO,
+        APP_DATA_ENABLED_MEDIA_AUDIO,
+
+        /** Video */
+        APP_DATA_ENABLED_MEDIA_VIDEO_JBOX,
+        APP_DATA_ENABLED_MEDIA_VIDEO_USB1,
+        APP_DATA_ENABLED_MEDIA_VIDEO_USB2,
+        APP_DATA_ENABLED_MEDIA_VIDEO_DISC,
+        APP_DATA_ENABLED_MEDIA_VIDEO_AUX,
+
+        /** Photo */
+        APP_DATA_ENABLED_MEDIA_PHOTO_JBOX,
+        APP_DATA_ENABLED_MEDIA_PHOTO_USB1,
+        APP_DATA_ENABLED_MEDIA_PHOTO_USB2,
+
+        /** Audio */
+        APP_DATA_ENABLED_MEDIA_AUDIO_JBOX,
+        APP_DATA_ENABLED_MEDIA_AUDIO_USB1,
+        APP_DATA_ENABLED_MEDIA_AUDIO_USB2,
+        APP_DATA_ENABLED_MEDIA_AUDIO_DISC,
+        APP_DATA_ENABLED_MEDIA_AUDIO_IPOD1,
+        APP_DATA_ENABLED_MEDIA_AUDIO_IPOD2,
+        APP_DATA_ENABLED_MEDIA_AUDIO_AUX,
+        APP_DATA_ENABLED_MEDIA_AUDIO_BT,
+        APP_DATA_ENABLED_MEDIA_AUDIO_PANDORA,
+        APP_DATA_ENABLED_MEDIA_AUDIO_AHA,
+        /** Aux */
+        APP_DATA_ENABLED_MEDIA_AUX,
+
+        /** Info */
+        APP_DATA_ENABLED_DRIVING_MODE,
+
+        /** Settings */
+        APP_DATA_ENABLED_VR,
+        APP_DATA_ENABLED_HELP,
+
+        APP_DATA_ENABLED_PARKED,
+
+        APP_DATA_ENABLED_MAXIMUM,
+
+        /** Integer */
+        APP_DATA_INT_MINIMUM = APP_DATA_ENABLED_MAXIMUM,
+        APP_DATA_INT_MAXIMUM,
+
+        APP_DATA_MAX
+    } APP_DATA_T;
+
+    enum APP_ID_T
+    {
+        /** HOME */
+        APP_ID_NAVI,
+        APP_ID_RADIO,
+        APP_ID_SIRIUS_XM_FROM_HOME,
+        APP_ID_DMB,
+        APP_ID_BT_PHONE,
+
+        /** HOME -> Media */
+        APP_ID_AUX,
+
+        /** HOME -> Media -> Audio */
+        APP_ID_AUDIO_JBOX,
+        APP_ID_AUDIO_USB1,
+        APP_ID_AUDIO_USB2,
+        APP_ID_AUDIO_IPOD1,
+        APP_ID_AUDIO_IPOD2, // 10
+        APP_ID_AUDIO_DISC,
+        APP_ID_AUDIO_BLUETOOTH,
+        APP_ID_PANDORA1,
+        APP_ID_PANDORA2,
+        APP_ID_AHA1,
+        APP_ID_AHA2,
+        APP_ID_BT_PANDORA,
+        APP_ID_BT_AHA,
+
+        /** HOME -> Media -> Video */
+        APP_ID_VIDEO_JBOX,
+        APP_ID_VIDEO_USB1, // 20
+        APP_ID_VIDEO_USB2,
+        APP_ID_VIDEO_DISC,
+
+        /** HOME -> Media -> Photo */
+        APP_ID_PHOTO_JBOX,
+        APP_ID_PHOTO_USB1,
+        APP_ID_PHOTO_USB2,
+
+        /** HOME -> Settings */
+        APP_ID_SETTINGS_SOUND,
+        APP_ID_SETTINGS_SCREEN,
+        APP_ID_SETTINGS_NAVI,
+        APP_ID_SETTINGS_BLUETOOTH,
+        APP_ID_SETTINGS_VR, // 30
+        APP_ID_SETTINGS_CLOCK,
+        APP_ID_WIFI_SETTINGS,
+
+        /** HOME -> Settings -> General*/
+        APP_ID_SETTINGS_GENERAL_INITIALIZATION,
+        APP_ID_SETTINGS_GENERAL_VIDEO_MNGMNT,
+        APP_ID_SETTINGS_GENERAL_SYSTEM,
+        APP_ID_SETTINGS_GENERAL_BASIC,
+
+        /** HOME -> Apps */
+        APP_ID_DOWNLOAD_APP,
+        APP_ID_APP_STORE,
+
+
+        /** HOME -> Info */
+        APP_ID_XM_DATA,
+        APP_ID_VIDEO_QUICK_GUIDE,
+        APP_ID_E_MANUAL,
+
+        /** HOME -> Bluelink */
+        APP_ID_BLUELINK_PHONE,
+        APP_ID_BLUELINK_ASSISTANT,
+        APP_ID_BLUELINK_SETTINGS,
+        APP_ID_DRIVING_INFO,
+
+
+        /** HOME -> Bluelink -> Navigation */
+        APP_ID_SEND_TO_CAR,
+        APP_ID_DAILY_ROUTE_GUIDANCE,
+
+        /** HOME -> Bluelink -> Auto Diagnostics */
+        APP_ID_VEHICLE_DIAGNOSTICS,
+        APP_ID_SCHEDULED_DIAGNOSTICS,
+        APP_ID_MAINTENANCE,
+        APP_ID_BLUELINK_CENTER,
+
+        /** HOME -> Bluelink -> Phone */
+        APP_ID_MODEM_PHONE_MAIN,
+        APP_ID_MODEM_DIAL,
+        APP_ID_MODEM_PHONEBOOK,
+        APP_ID_MODEM_CALL_HISTORY,
+
+        APP_ID_MAX,
+        APP_ID_INVALID
+    };
+
+    enum IMG_T
+    {
+        IMG_NONE,
+
+        /*************************
+       * Main images           *
+       *************************/
+        IMG_BG_MAIN,
+
+        /*************************
+       * Applications images   *
+       *************************/
+        IMG_ICON_APPLICATION,
+        IMG_ICON_AUX,
+        IMG_ICON_BLUELINK,
+        IMG_ICON_BLUELINK_ASSISTANT,
+        IMG_ICON_BLUELINK_CENTER,
+        IMG_ICON_BLUELINK_PHONE,
+        IMG_ICON_BLUELINK_SETTINGS,
+        IMG_ICON_BLUELINK_PHONE_DIAL,
+        IMG_ICON_BLUETOOTH,
+        IMG_ICON_BT,
+        IMG_ICON_BT_PANDORA,
+        IMG_ICON_BT_AHA,
+        IMG_ICON_BT_SET,
+        IMG_ICON_DISC,
+        IMG_ICON_DMB,
+        IMG_ICON_DRIVING_INFO,
+        IMG_ICON_E_MANUAL,
+        IMG_ICON_GENERAL,
+        IMG_ICON_INFO,
+        IMG_ICON_VIDEO_QUICK_GUIDE,
+        IMG_ICON_JBOX,
+        IMG_ICON_MEDIA,
+        IMG_ICON_NAVI,
+        IMG_ICON_NETWORK,
+        IMG_ICON_PANDORA,
+        IMG_ICON_RADIO,
+        IMG_ICON_SCREEN,
+        IMG_ICON_SEND_TO_CAR,
+        IMG_ICON_SETTING,
+        IMG_ICON_SOUND,
+        IMG_ICON_SYSTEM,
+        IMG_ICON_USB,
+        IMG_ICON_VEHICLE_DIAGNOSTICS,
+        IMG_ICON_VOIREC,
+        IMG_ICON_XM,
+        IMG_ICON_XM_DATA,
+
+        IMG_ICON_AUDIO_JUKEBOX,
+        IMG_ICON_AUDIO_USB,
+        IMG_ICON_PHOTO_USB,
+        IMG_ICON_PHOTO_JUKEBOX,
+        IMG_ICON_VIDEO_USB,
+        IMG_ICON_VIDEO_JUKEBOX,
+
+        /*********************
+       * Title area images *
+       *********************/
+        IMG_TITLE_BG,
+        IMG_TITLE_BTN,
+        IMG_ICON_AHA,
+
+        IMG_ICON_IPOD,
+
+        IMG_ICON_CLOCK,
+        IMG_ICON_NAVI_SETTING,
+
+        // Home Ver 2 icons
+        IMG_ICON_MAIN_PHONE_180,
+        IMG_ICON_MAIN_PHONE_196,
+        IMG_ICON_MAIN_PHONE_226,
+        IMG_ICON_MAIN_PHONE_250,
+
+        IMG_ICON_MAIN_APPS_180,
+
+        IMG_ICON_MAIN_BLUELINK_180,
+
+        IMG_ICON_MAIN_SETTING_180,
+        IMG_ICON_MAIN_SETTING_196,
+        IMG_ICON_MAIN_SETTING_232,
+        IMG_ICON_MAIN_SETTING_238,
+
+        IMG_ICON_MAIN_MEDIA_180,
+        IMG_ICON_MAIN_MEDIA_196,
+        IMG_ICON_MAIN_MEDIA_226,
+        IMG_ICON_MAIN_MEDIA_234,
+        IMG_ICON_MAIN_MEDIA_246,
+        IMG_ICON_MAIN_MEDIA_250,
+        IMG_ICON_MAIN_MEDIA_270,
+
+        IMG_ICON_MAIN_DMB_234,
+        IMG_ICON_MAIN_DMB_246,
+
+        IMG_ICON_MAIN_RADIO_232,
+        IMG_ICON_MAIN_RADIO_234,
+        IMG_ICON_MAIN_RADIO_238,
+        IMG_ICON_MAIN_RADIO_246,
+        IMG_ICON_MAIN_RADIO_250,
+        IMG_ICON_MAIN_RADIO_270,
+
+        IMG_ICON_MAIN_NAVI_226,
+        IMG_ICON_MAIN_NAVI_232,
+        IMG_ICON_MAIN_NAVI_234,
+        IMG_ICON_MAIN_NAVI_246,
+
+        IMG_ICON_MAIN_XM_DATA_180,
+        IMG_ICON_MAIN_XM_DATA_226,
+
+        IMG_ICON_MAIN_XM_234,
+        IMG_ICON_MAIN_XM_246,
+        IMG_ICON_MAIN_XM_254,
+
+        /** Add new ID before this line according IMAGE_PATHS mas */
+        IMG_MAX
+    };
+
+    enum COLOR_T
+    {
+        COLOR_BLACK,
+        COLOR_BRIGHT_GREY,
+        COLOR_SUB_TEXT_GREY,
+        COLOR_GREY,
+        COLOR_DIMMED_GREY,
+        COLOR_DISABLE_GREY,
+        COLOR_FOCUS_GREY,
+        COLOR_BUTTON_GREY,
+        COLOR_PROGRESS_BLUE,
+        COLOR_DIMMED_BLUE,
+        COLOR_128_191_255,
+        COLOR_112_112_112,
+        COLOR_41_41_41,
+
+        COLOR_MAX,
+    };
+
+    enum BG_MASK_POS_T
+    {
+        BG_MAIN_MASK_Y = 442,
+        BG_SUB_S_MASK_Y = 489,
+        BG_SUB_L_MASK_Y = 493,
+    };
+
+    enum AV_WIDGET
+    {
+        AV_TEXT_PIXEL_SIZE = 30,
+        AV_TEXT_WIDTH = 684,
+        AV_LINE1_COLOR = COLOR_DIMMED_GREY,
+        AV_LINE2_COLOR = COLOR_BRIGHT_GREY,
+        AV_LINE_LO = 298,
+        AV_LINE2_VCO = 397,
+        AV_LINE1_VCO = AV_LINE2_VCO - 37,
+    };
+
+    enum ICON_T
+    {
+        ICON_TEXT_WIDTH = 210,
+        ICON_TEXT_SINGLE_VCM = 43,
+        ICON_TEXT_DOUBLE_FIRST_VCM = 13,
+        ICON_TEXT_DOUBLE_SECOND_VCM = ICON_TEXT_DOUBLE_FIRST_VCM + 30,
+        ICON_TEXT_PIXEL_SIZE = 28,
+        ICON_TEXT_COLOR_NORMAL = COLOR_BRIGHT_GREY,
+        ICON_TEXT_COLOR_PRESSED = COLOR_128_191_255,
+        ICON_TEXT_COLOR_DISABLED = COLOR_112_112_112,
+    };
+
+    enum FOCUS_INDEX_T
+    {
+        FOCUS_INDEX_ICONS_MENU,
+        FOCUS_INDEX_POPUP
+    };
+
+    enum POPUP_TYPE_T
+    {
+        POPUP_INVALID,
+        POPUP_NO_MEDIA,
+        POPUP_NO_IMAGE,
+        //POPUP_IGN_OFF,
+        POPUP_VR_NOT_SUPPORT,
+        POPUP_NO_SDCARD,
+        POPUP_SDCARD_NOT_SUPPORT_PREMIUM20,
+        POPUP_NO_IMAGE_IN_USB,
+        POPUP_NO_IMAGE_IN_JBOX,
+        POPUP_NO_MUSIC,
+        POPUP_NO_MUSIC_IN_USB,
+        POPUP_NO_MUSIC_IN_JBOX,
+        POPUP_NO_VIDEO,
+        POPUP_NO_VIDEO_IN_USB,
+        POPUP_NO_VIDEO_IN_JBOX,
+        POPUP_RESTRICTION,
+        POPUP_NO_PHONE_CONNECTED,
+        POPUP_NOT_USE_BLUELINK_PHONE,
+        //POPUP_PREPARING,
+        POPUP_LOCAL_IGN,
+        POPUP_LOCAL_BLUELINK,
+        POPUP_LOCAL_DRS,
+        POPUP_DISABLE_BT_MUSIC,
+        POPUP_HELP_NOT_SUPPORT
+    };
+
+    /*
+    enum HB_STATE
+    {
+        HB_STATE_BUTTON = 0,
+        HB_STATE_TEXT,
+        HB_STATE_AUTO
+    };
+    */
+
+    enum VIEW_LAYOUT_T
+    {
+        VIEW_LAYOUT_3 = 3,
+        VIEW_LAYOUT_4,
+        VIEW_LAYOUT_5,
+        VIEW_LAYOUT_6,
+        VIEW_LAYOUT_7,
+        VIEW_LAYOUT_8,
+        VIEW_LAYOUT_9,
+
+        VIEW_LAYOUT_MAX
+    };
+
+
+};
+
+#endif // DHAVN_APPHOMESCREEN_DEF_PRIVATE_H

@@ -1,0 +1,161 @@
+/*
+==============================================================================
+
+Project:        MOST NetServices V3 for INIC
+Module:         Internal service event distribution table (Basic Layer)
+File:           events.tab
+Version:        3.0.x-SR-2  
+Language:       C
+Author(s):      S.Semmler
+Date:           31.January.2012
+
+FileGroup:      Layer I
+Customer ID:    34C40C060300xx.HYUNDAI.DH
+FeatureCode:    FCR1
+------------------------------------------------------------------------------
+
+                (c) Copyright 1998-2012
+                SMSC
+                All Rights Reserved
+
+------------------------------------------------------------------------------
+
+
+
+Modifications
+~~~~~~~~~~~~~
+Date            By      Description
+
+==============================================================================
+*/
+
+/*! \file
+  * \brief      Internal service event distribution table (Basic Layer)
+  */
+
+#ifdef MIS_MIN
+static MnsEventEntry mns_mis_events[] =
+{
+#ifdef PMS_MIN
+    { MIS_P_BUF_FREED,  PmsSetPendingEvent, PMS_P_BUF_FREED,  MX_PMS_PE },
+#endif
+
+#ifdef MIS_MIN
+    { MIS_P_BUF_FREED,  MisSetPendingEvent, MIS_P_BUF_FREED,  MX_MIS_PE },
+#endif
+
+#ifdef MNS_MIN
+    { MIS_P_BUF_FREED,  MnsSetPendingEvent, MNS_P_BUF_FREED,  MX_MNS_PE },
+#endif
+
+#ifdef AMS_MIN
+    { MIS_P_BUF_FREED,  MsgSetPendingEvent, AMS_P_BUF_FREED,  MX_AMS_PE },
+#endif
+
+#ifdef MCS_MIN
+    { MIS_P_BUF_FREED,  WmcsSetPendingEvent, WMCS_P_BUF_FREED, MX_WMCS_PE },
+#endif
+
+#ifdef VMSV_MIN
+    { MIS_P_BUF_FREED,  VmsvSetPendingEvent, VMSV_P_BUF_FREED, MX_VMSV_PE },
+#endif
+
+#ifdef GAS_MIN
+    { MIS_P_BUF_FREED,  GasSetPendingEvent, GAS_P_BUF_FREED,  MX_GAS_PE },
+#endif
+
+    { 0,                NULL,               0,                0 }
+};
+#endif
+
+#ifdef MNS_MIN
+static MnsEventEntry mns_mns_events[] =
+{
+#ifdef MNS_MIN
+    { MNS_P_AS_GO_PROTECTED,      MnsSetPendingEvent,  MNS_P_AS_GO_PROTECTED,      MX_MNS_PE  },
+    { MNS_P_AS_GO_SEMI_PROTECTED, MnsSetPendingEvent,  MNS_P_AS_GO_SEMI_PROTECTED, MX_MNS_PE  },
+    { MNS_P_AS_GO_ATTACHED,       MnsSetPendingEvent,  MNS_P_AS_GO_ATTACHED,       MX_MNS_PE  },
+#endif
+#ifdef MCS_MIN
+    { MNS_P_AS_GO_PROTECTED,      WmcsSetPendingEvent, WMCS_P_GO_PROTECTED,        MX_WMCS_PE },
+    { MNS_P_AS_GO_SEMI_PROTECTED, WmcsSetPendingEvent, WMCS_P_GO_SEMI_PROTECTED,   MX_WMCS_PE },
+    { MNS_P_NTF_COMPLETE,         WmcsSetPendingEvent, WMCS_P_NTF_COMPLETE,        MX_WMCS_PE },
+#endif
+
+#ifdef VMSV_MIN
+    { MNS_P_AS_GO_PROTECTED,      VmsvSetPendingEvent, VMSV_P_GO_PROTECTED,        MX_VMSV_PE },
+    { MNS_P_AS_GO_SEMI_PROTECTED, VmsvSetPendingEvent, VMSV_P_GO_SEMI_PROTECTED,   MX_VMSV_PE },
+    { MNS_P_NTF_COMPLETE,         VmsvSetPendingEvent, VMSV_P_NTF_COMPLETE,        MX_VMSV_PE },
+    { MNS_P_AS_GO_ATTACHED,       VmsvSetPendingEvent, VMSV_P_GO_ATTACHED,         MX_VMSV_PE },
+#endif
+
+#ifdef SCM_MIN
+    { MNS_P_AS_GO_PROTECTED,      ScmSetPendingEvent,  WSCM_P_GO_PROTECTED,        MX_WSCM_PE },
+  #ifdef SCMPM_MIN
+    { MNS_P_AS_GO_SEMI_PROTECTED, ScmSetPendingEvent,  WSCM_P_GO_SEMI_PROTECTED,   MX_WSCM_PE },
+  #endif
+#endif
+#ifdef AMS_MIN
+    { MNS_P_AS_GO_PROTECTED,      MsgSetPendingEvent,  AMS_P_GO_PROTECTED,         MX_AMS_PE  },
+    { MNS_P_AS_GO_SEMI_PROTECTED, MsgSetPendingEvent,  AMS_P_GO_SEMI_PROTECTED,    MX_AMS_PE  },
+
+#endif
+
+#ifdef PMS_MIN
+    { MNS_P_AS_GO_PROTECTED,      PmsSetPendingEvent,  PMS_P_GO_PROTECTED,       MX_PMS_PE  },
+    { MNS_P_AS_GO_NET_OFF,        PmsSetPendingEvent,  PMS_P_GO_NET_OFF,         MX_PMS_PE  },
+    { MNS_P_AS_GO_SEMI_PROTECTED, PmsSetPendingEvent,  PMS_P_GO_SEMI_PROTECTED,  MX_PMS_PE  },
+#endif
+
+#ifdef AAM_MIN
+    { MNS_P_AS_GO_SEMI_PROTECTED, AamSetPendingEvent,  AAM_P_GO_SEMI_PROTECTED,  MX_AAM_PE },
+#endif
+
+#ifdef GAS_MIN
+    { MNS_P_START_GAS_MODE,       GasSetPendingEvent,  GAS_P_START,              MX_GAS_PE },
+    { MNS_P_AS_GO_PROTECTED,      GasSetPendingEvent,  GAS_P_GO_PROTECTED,       MX_GAS_PE },
+#endif
+
+    { 0,                          NULL,               0,                          0 }
+};
+#endif
+
+#ifdef SCM_MIN
+static MnsEventEntry mns_wscm_events[] =
+{
+#ifdef MNS_MIN
+    { WSCM_P_SRV_CHECK,           MnsSetPendingEvent,  MNS_P_SRV_CHECK,           MX_MNS_PE  },
+#endif
+    { 0,                          NULL,               0,                          0 }
+};
+#endif
+
+#ifdef VMSV_MIN
+static MnsEventEntry mns_vmsv_events[] =
+{
+#ifdef MNS_MIN
+    { VMSV_P_SRV_CHECK,           MnsSetPendingEvent,  MNS_P_SRV_CHECK,           MX_MNS_PE  },
+#endif
+    { 0,                          NULL,               0,                          0 }
+};
+#endif
+
+static MnsServiceEntry mns_events[] =
+{
+#ifdef MIS_MIN
+    { MNS_P_SRV_MIS,    (MnsEventPtr) &mns_mis_events[0]  },
+#endif
+
+#ifdef MNS_MIN
+    { MNS_P_SRV_MNS,    (MnsEventPtr) &mns_mns_events[0]  },
+#endif
+
+#ifdef SCM_MIN
+    { MNS_P_SRV_WSCM,   (MnsEventPtr) &mns_wscm_events[0] },
+#endif
+
+#ifdef VMSV_MIN
+    { MNS_P_SRV_VMSV,   (MnsEventPtr) &mns_vmsv_events[0] },
+#endif
+    { 0,                NULL                              }
+};

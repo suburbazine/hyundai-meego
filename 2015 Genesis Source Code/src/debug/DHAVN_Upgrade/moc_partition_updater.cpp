@@ -1,0 +1,100 @@
+/****************************************************************************
+** Meta object code from reading C++ file 'partition_updater.h'
+**
+** Created by: The Qt Meta Object Compiler version 63 (Qt 4.8.3)
+**
+** WARNING! All changes made in this file will be lost!
+*****************************************************************************/
+
+#include "src/modules/partition/partition_updater.h"
+#if !defined(Q_MOC_OUTPUT_REVISION)
+#error "The header file 'partition_updater.h' doesn't include <QObject>."
+#elif Q_MOC_OUTPUT_REVISION != 63
+#error "This file was generated using the moc from 4.8.3. It"
+#error "cannot be used with the include files from this version of Qt."
+#error "(The moc has changed too much.)"
+#endif
+
+QT_BEGIN_MOC_NAMESPACE
+static const uint qt_meta_data_PartitionUpdater[] = {
+
+ // content:
+       6,       // revision
+       0,       // classname
+       0,    0, // classinfo
+       4,   14, // methods
+       0,    0, // properties
+       0,    0, // enums/sets
+       0,    0, // constructors
+       0,       // flags
+       0,       // signalCount
+
+ // slots: signature, parameters, type, tag, flags
+      18,   17,   17,   17, 0x08,
+      43,   17,   17,   17, 0x08,
+      65,   17,   17,   17, 0x08,
+      80,   17,   17,   17, 0x08,
+
+       0        // eod
+};
+
+static const char qt_meta_stringdata_PartitionUpdater[] = {
+    "PartitionUpdater\0\0checkEndProcess(QString)\0"
+    "processStdin(QString)\0countProcess()\0"
+    "logStdin(QString)\0"
+};
+
+void PartitionUpdater::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
+{
+    if (_c == QMetaObject::InvokeMetaMethod) {
+        Q_ASSERT(staticMetaObject.cast(_o));
+        PartitionUpdater *_t = static_cast<PartitionUpdater *>(_o);
+        switch (_id) {
+        case 0: _t->checkEndProcess((*reinterpret_cast< const QString(*)>(_a[1]))); break;
+        case 1: _t->processStdin((*reinterpret_cast< const QString(*)>(_a[1]))); break;
+        case 2: _t->countProcess(); break;
+        case 3: _t->logStdin((*reinterpret_cast< const QString(*)>(_a[1]))); break;
+        default: ;
+        }
+    }
+}
+
+const QMetaObjectExtraData PartitionUpdater::staticMetaObjectExtraData = {
+    0,  qt_static_metacall 
+};
+
+const QMetaObject PartitionUpdater::staticMetaObject = {
+    { &AbstractUpdater::staticMetaObject, qt_meta_stringdata_PartitionUpdater,
+      qt_meta_data_PartitionUpdater, &staticMetaObjectExtraData }
+};
+
+#ifdef Q_NO_DATA_RELOCATION
+const QMetaObject &PartitionUpdater::getStaticMetaObject() { return staticMetaObject; }
+#endif //Q_NO_DATA_RELOCATION
+
+const QMetaObject *PartitionUpdater::metaObject() const
+{
+    return QObject::d_ptr->metaObject ? QObject::d_ptr->metaObject : &staticMetaObject;
+}
+
+void *PartitionUpdater::qt_metacast(const char *_clname)
+{
+    if (!_clname) return 0;
+    if (!strcmp(_clname, qt_meta_stringdata_PartitionUpdater))
+        return static_cast<void*>(const_cast< PartitionUpdater*>(this));
+    return AbstractUpdater::qt_metacast(_clname);
+}
+
+int PartitionUpdater::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
+{
+    _id = AbstractUpdater::qt_metacall(_c, _id, _a);
+    if (_id < 0)
+        return _id;
+    if (_c == QMetaObject::InvokeMetaMethod) {
+        if (_id < 4)
+            qt_static_metacall(this, _c, _id, _a);
+        _id -= 4;
+    }
+    return _id;
+}
+QT_END_MOC_NAMESPACE

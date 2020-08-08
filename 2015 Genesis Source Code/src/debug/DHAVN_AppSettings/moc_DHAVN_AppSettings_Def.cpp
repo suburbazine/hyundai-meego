@@ -1,0 +1,398 @@
+/****************************************************************************
+** Meta object code from reading C++ file 'DHAVN_AppSettings_Def.h'
+**
+** Created by: The Qt Meta Object Compiler version 63 (Qt 4.8.3)
+**
+** WARNING! All changes made in this file will be lost!
+*****************************************************************************/
+
+#include "hdr/DHAVN_AppSettings_Def.h"
+#if !defined(Q_MOC_OUTPUT_REVISION)
+#error "The header file 'DHAVN_AppSettings_Def.h' doesn't include <QObject>."
+#elif Q_MOC_OUTPUT_REVISION != 63
+#error "This file was generated using the moc from 4.8.3. It"
+#error "cannot be used with the include files from this version of Qt."
+#error "(The moc has changed too much.)"
+#endif
+
+QT_BEGIN_MOC_NAMESPACE
+static const uint qt_meta_data_SettingsDef[] = {
+
+ // content:
+       6,       // revision
+       0,       // classname
+       0,    0, // classinfo
+       0,    0, // methods
+       0,    0, // properties
+      20,   14, // enums/sets
+       0,    0, // constructors
+       0,       // flags
+       0,       // signalCount
+
+ // enums: name, flags, count, data
+      12, 0x0,   75,   94,
+      30, 0x0,   23,  244,
+      50, 0x0,    2,  290,
+      76, 0x0,    2,  294,
+     101, 0x0,    3,  298,
+     120, 0x0,   12,  304,
+     140, 0x0,    7,  328,
+     168, 0x0,    1,  342,
+     187, 0x0,    9,  344,
+     209, 0x0,    2,  362,
+     225, 0x0,    2,  366,
+     251, 0x0,    2,  370,
+     276, 0x0,    2,  374,
+     301, 0x0,    3,  378,
+     325, 0x0,    4,  384,
+     350, 0x0,    2,  392,
+     376, 0x0,    5,  396,
+     402, 0x0,    2,  406,
+     421, 0x0,    7,  410,
+     455, 0x0,    4,  424,
+
+ // enum data: key, value
+     484, uint(SettingsDef::DB_KEY_PHOTO_FRAME),
+     503, uint(SettingsDef::DB_KEY_PHOTO_FRAME_IMAGE),
+     528, uint(SettingsDef::DB_KEY_SUMMER_TIME),
+     547, uint(SettingsDef::DB_KEY_GPS_TIME_SETTINGS),
+     572, uint(SettingsDef::DB_KEY_DISPLAY_CLOCK_AT_AUDIO_END),
+     606, uint(SettingsDef::DB_KEY_DISPLAY_CLOCK),
+     627, uint(SettingsDef::DB_KEY_CLOCK_TYPE),
+     645, uint(SettingsDef::DB_KEY_TIME_TYPE),
+     662, uint(SettingsDef::DB_KEY_CALENDAR_TYPE),
+     683, uint(SettingsDef::DB_KEY_LANGUAGE_TYPE),
+     704, uint(SettingsDef::DB_KEY_TEMPERATURE_TYPE),
+     728, uint(SettingsDef::DB_KEY_APPROVAL),
+     744, uint(SettingsDef::DB_KEY_LOCKREARMONITOR_DISPLAY),
+     775, uint(SettingsDef::DB_KEY_LOCKREARMONITOR_FUNCTION),
+     807, uint(SettingsDef::DB_KEY_VIDEO_BRIGHTNESS),
+     831, uint(SettingsDef::DB_KEY_VIDEO_SATURATION),
+     855, uint(SettingsDef::DB_KEY_VIDEO_HUE),
+     872, uint(SettingsDef::DB_KEY_VIDEO_CONTRAST),
+     894, uint(SettingsDef::DB_KEY_IMAGE_BRIGHTNESS),
+     918, uint(SettingsDef::DB_KEY_EXPOSURE),
+     934, uint(SettingsDef::DB_KEY_ASPECT_RADIO),
+     954, uint(SettingsDef::DB_KEY_DVD_SUBTITLE_LANGUAGE),
+     983, uint(SettingsDef::DB_KEY_DVD_AUDIO_LANGUAGE),
+    1009, uint(SettingsDef::DB_KEY_DVD_ANGLE),
+    1026, uint(SettingsDef::DB_KEY_SOUND_BALANCE),
+    1047, uint(SettingsDef::DB_KEY_SOUND_FADER),
+    1066, uint(SettingsDef::DB_KEY_SOUND_LOWTONE),
+    1087, uint(SettingsDef::DB_KEY_SOUND_MIDTONE),
+    1108, uint(SettingsDef::DB_KEY_SOUND_HIGHTONE),
+    1130, uint(SettingsDef::DB_KEY_SOUND_VOLUME_RATIO),
+    1156, uint(SettingsDef::DB_KEY_SOUND_POWERBASS),
+    1179, uint(SettingsDef::DB_KEY_SOUND_POWERTREBLE),
+    1204, uint(SettingsDef::DB_KEY_SOUND_SURROUND),
+    1226, uint(SettingsDef::DB_KEY_SOUND_ACTIVE),
+    1246, uint(SettingsDef::DB_KEY_SOUND_SPEED),
+    1265, uint(SettingsDef::DB_KEY_SOUND_BEEP),
+    1283, uint(SettingsDef::DB_KEY_SOUND_VEQ),
+    1300, uint(SettingsDef::DB_KEY_VOICE_VOICECOMMAND),
+    1326, uint(SettingsDef::DB_KEY_KEYPAD),
+    1340, uint(SettingsDef::DB_KEY_WINDOWS_INTERLOCKING),
+    1368, uint(SettingsDef::DB_KEY_DISTANCE_UNIT),
+    1389, uint(SettingsDef::DB_KEY_APPROACH_SENSOR),
+    1412, uint(SettingsDef::DB_KEY_QUANTUMLOGIC),
+    1432, uint(SettingsDef::DB_KEY_DATEFORMAT_TYPE),
+    1455, uint(SettingsDef::DB_KEY_DIVX_REG_STATE),
+    1477, uint(SettingsDef::DB_KEY_VIDEO_SCREENSETTINGS),
+    1505, uint(SettingsDef::DB_KEY_FRONT_SCREENBRIGHTNESS),
+    1535, uint(SettingsDef::DB_KEY_REAR_SCREENBRIGHTNESS),
+    1564, uint(SettingsDef::DB_KEY_FIRST_CAPITAL),
+    1585, uint(SettingsDef::DB_KEY_ENGLISH_KEYPAD),
+    1607, uint(SettingsDef::DB_KEY_KOREAN_KEYPAD),
+    1628, uint(SettingsDef::DB_KEY_ARABIC_KEYPAD),
+    1649, uint(SettingsDef::DB_KEY_CHINA_KEYPAD),
+    1669, uint(SettingsDef::DB_KEY_EUROPE_KEYPAD),
+    1690, uint(SettingsDef::DB_KEY_RUSSIAN_KEYPAD),
+    1712, uint(SettingsDef::DB_KEY_CURRENT_REGION),
+    1734, uint(SettingsDef::DB_KEY_AUX_VIDEOIN),
+    1753, uint(SettingsDef::DB_KEY_BT_VOLUME_LEVEL),
+    1776, uint(SettingsDef::DB_KEY_BT_RINGTONE),
+    1795, uint(SettingsDef::DB_KEY_BL_VOLUME_LEVEL),
+    1818, uint(SettingsDef::DB_KEY_BL_RINGTONE),
+    1837, uint(SettingsDef::DB_KEY_AUTO_TIMEZONE),
+    1858, uint(SettingsDef::DB_KEY_AUTO_TIMEZONE_SET),
+    1883, uint(SettingsDef::DB_KEY_SUMMER_TIME_SET),
+    1906, uint(SettingsDef::DB_KEY_VR_VOLUME_LEVEL),
+    1929, uint(SettingsDef::DB_KEY_VR_PHONE_PRIORITY),
+    1954, uint(SettingsDef::DB_KEY_REAR_ON),
+    1969, uint(SettingsDef::DB_KEY_HYUNDAY_KEYPAD),
+    1991, uint(SettingsDef::DB_KEY_SCROLL_TICKER),
+    2012, uint(SettingsDef::DB_KEY_LREAR),
+    2025, uint(SettingsDef::DB_KEY_RREAR),
+    2038, uint(SettingsDef::DB_KEY_VOICE_APPLE_SIRI),
+    2062, uint(SettingsDef::DB_KEY_VIP_SOUND),
+    2079, uint(SettingsDef::DB_KEY_RESET_ALL_COMPLETE),
+    2105, uint(SettingsDef::DB_KEY_MAX),
+    2116, uint(SettingsDef::SETTINGS_LANGUAGE_UNKNOWN),
+    2142, uint(SettingsDef::SETTINGS_LANGUAGE_EN),
+    2163, uint(SettingsDef::SETTINGS_LANGUAGE_KO),
+    2184, uint(SettingsDef::SETTINGS_LANGUAGE_ZH_MA),
+    2208, uint(SettingsDef::SETTINGS_LANGUAGE_ZH_CN),
+    2232, uint(SettingsDef::SETTINGS_LANGUAGE_PT),
+    2253, uint(SettingsDef::SETTINGS_LANGUAGE_EN_UK),
+    2277, uint(SettingsDef::SETTINGS_LANGUAGE_EN_US),
+    2301, uint(SettingsDef::SETTINGS_LANGUAGE_FR),
+    2322, uint(SettingsDef::SETTINGS_LANGUAGE_IT),
+    2343, uint(SettingsDef::SETTINGS_LANGUAGE_DE),
+    2364, uint(SettingsDef::SETTINGS_LANGUAGE_ES),
+    2385, uint(SettingsDef::SETTINGS_LANGUAGE_RU),
+    2406, uint(SettingsDef::SETTINGS_LANGUAGE_NL),
+    2427, uint(SettingsDef::SETTINGS_LANGUAGE_SV),
+    2448, uint(SettingsDef::SETTINGS_LANGUAGE_PL),
+    2469, uint(SettingsDef::SETTINGS_LANGUAGE_TR),
+    2490, uint(SettingsDef::SETTINGS_LANGUAGE_CS),
+    2511, uint(SettingsDef::SETTINGS_LANGUAGE_DA),
+    2532, uint(SettingsDef::SETTINGS_LANGUAGE_SK),
+    2553, uint(SettingsDef::SETTINGS_LANGUAGE_AR),
+    2574, uint(SettingsDef::SETTINGS_LANGUAGE_FR_NA),
+    2598, uint(SettingsDef::SETTINGS_LANGUAGE_ES_NA),
+    2622, uint(SettingsDef::SETTINGS_EVT_KEY_STATUS_PRESSED),
+    2654, uint(SettingsDef::SETTINGS_EVT_KEY_STATUS_RELEASED),
+    2687, uint(SettingsDef::SETTINGS_DISTANCE_KM),
+    2708, uint(SettingsDef::SETTINGS_DISTANCE_MILE),
+    2731, uint(SettingsDef::SETTINGS_DISPLAY_FRONT),
+    2754, uint(SettingsDef::SETTINGS_DISPLAY_REAR),
+    2776, uint(SettingsDef::SETTINGS_DISPLAY_NONE),
+    2798, uint(SettingsDef::SETTINGS_RESET_SOUND_SETTINGS),
+    2828, uint(SettingsDef::SETTINGS_RESET_SCREEN_SETTINGS),
+    2859, uint(SettingsDef::SETTINGS_RESET_GENERAL_SETTINGS),
+    2891, uint(SettingsDef::SETTINGS_RESET_NAVI_SETTINGS),
+    2920, uint(SettingsDef::SETTINGS_RESET_BT_SETTINGS),
+    2947, uint(SettingsDef::SETTINGS_CONFIRM_FORMAT_POPUP),
+    2977, uint(SettingsDef::SETTINGS_DVD_POPUP_TYPE),
+    3001, uint(SettingsDef::SETTINGS_TIME_PICKER_POPUP),
+    3028, uint(SettingsDef::SETTINGS_GPSTIME_POPUP),
+    3051, uint(SettingsDef::SETTINGS_VR_NOT_SUPPORT_POPUP),
+    3081, uint(SettingsDef::SETTINGS_JUKEBOX_IMAGE_DISABLE),
+    3112, uint(SettingsDef::SETTINGS_DRS_MESSAGE_POPUP),
+    3139, uint(SettingsDef::SETTINGS_TOAST_RESET_START),
+    3166, uint(SettingsDef::SETTINGS_TOAST_RESET_COMPLETE),
+    3196, uint(SettingsDef::SETTINGS_TOAST_FORMAT_START),
+    3224, uint(SettingsDef::SETTINGS_TOAST_FORMAT_COMPLETE),
+    3255, uint(SettingsDef::SETTINGS_TOAST_LANGUAGE_CHANGING),
+    3288, uint(SettingsDef::SETTINGS_TOAST_TIME_SETTING_COMPLETE),
+    3325, uint(SettingsDef::SETTINGS_TOAST_DAYLIGHT_SAVINGS_TIME_CHANGING),
+    3371, uint(SettingsDef::SETTINGS_EVT_KEY_BACK),
+    3393, uint(SettingsDef::SETTINGS_DATEFORMAT_YYYYMMDD_DASH),
+    3427, uint(SettingsDef::SETTINGS_DATEFORMAT_MMDDYYYY_DASH),
+    3461, uint(SettingsDef::SETTINGS_DATEFORMAT_DDMMYYYY_DASH),
+    3495, uint(SettingsDef::SETTINGS_DATEFORMAT_YYYYMMDD_SLASH),
+    3530, uint(SettingsDef::SETTINGS_DATEFORMAT_MMDDYYYY_SLASH),
+    3565, uint(SettingsDef::SETTINGS_DATEFORMAT_DDMMYYYY_SLASH),
+    3600, uint(SettingsDef::SETTINGS_DATEFORMAT_YYYYMMDD_DOT),
+    3633, uint(SettingsDef::SETTINGS_DATEFORMAT_MMDDYYYY_DOT),
+    3666, uint(SettingsDef::SETTINGS_DATEFORMAT_DDMMYYYY_DOT),
+    3699, uint(SettingsDef::SETTINGS_DIVX_REG),
+    3717, uint(SettingsDef::SETTINGS_DIVX_DEREG),
+    3737, uint(SettingsDef::SETTINGS_ENGLISH_KEYPAD_QWERTY),
+    3768, uint(SettingsDef::SETTINGS_ENGLISH_KEYPAD_ABCD),
+    3797, uint(SettingsDef::SETTINGS_KOREAN_KEYPAD_QWERTY),
+    3827, uint(SettingsDef::SETTINGS_KOREAN_KEYPAD_LETTER),
+    3857, uint(SettingsDef::SETTINGS_ARABIC_QWERTY),
+    3880, uint(SettingsDef::SETTINGS_ARABIC_TYPE2),
+    3902, uint(SettingsDef::SETTINGS_CHINA_PINYIN),
+    3924, uint(SettingsDef::SETTINGS_CHINA_VOCAL_SOUND),
+    3951, uint(SettingsDef::SETTINGS_CHINA_HAND_WRITING),
+    3979, uint(SettingsDef::SETTINGS_EUROPE_ENGLISH_QWERTY),
+    4010, uint(SettingsDef::SETTINGS_EUROPE_ENGLISH_ABC),
+    4038, uint(SettingsDef::SETTINGS_EUROPE_QWERTZ),
+    4061, uint(SettingsDef::SETTINGS_EUROPE_AZERTY),
+    4084, uint(SettingsDef::SETTINGS_RUSSIAN_CYRILLIC_QWERTY),
+    4117, uint(SettingsDef::SETTINGS_RUSSIAN_CYRILLIC_ABC),
+    4147, uint(SettingsDef::SETTINGS_HYUNDAI_KOREAN),
+    4171, uint(SettingsDef::SETTINGS_HYUNDAI_ENGLISH_LATIN),
+    4202, uint(SettingsDef::SETTINGS_HYUNDAI_ARABIC),
+    4226, uint(SettingsDef::SETTINGS_HYUNDAI_CHINA),
+    4249, uint(SettingsDef::SETTINGS_HYUNDAI_EUROPE),
+    4273, uint(SettingsDef::SETTINGS_TIME_TYPE_AM),
+    4295, uint(SettingsDef::SETTINGS_TIME_TYPE_PM),
+    4317, uint(SettingsDef::SETTINGS_VDS_S_ALL),
+    4336, uint(SettingsDef::SETTINGS_VDS_S_ADJUST_SCREEN),
+    4365, uint(SettingsDef::SETTINGS_VDS_S_LCD_BRIGHTNESS),
+    4395, uint(SettingsDef::SETTINGS_VDS_S_ILLUMINATION),
+    4423, uint(SettingsDef::SETTINGS_VDS_S_VIDEO_RATIO),
+    4450, uint(SettingsDef::SETTINGS_VDS_S_DISPLAY_ONOFF),
+    4479, uint(SettingsDef::SETTINGS_VDS_S_INVALID),
+    4502, uint(SettingsDef::SETTINGS_SMD_FRONT),
+    4521, uint(SettingsDef::SETTINGS_SMD_LREAR),
+    4540, uint(SettingsDef::SETTINGS_SMD_RREAR),
+    4559, uint(SettingsDef::SETTINGS_SMD_ALL),
+
+       0        // eod
+};
+
+static const char qt_meta_stringdata_SettingsDef[] = {
+    "SettingsDef\0DB_SETTINGS_KEY_T\0"
+    "SETTINGS_LANGUAGE_T\0SETTINGS_EVT_KEY_STATUS_T\0"
+    "SETTINGS_DISTANCE_UNIT_T\0SETTINGS_DISPLAY_T\0"
+    "SETTINGS_POPUP_TYPE\0SETTINGS_TOAST_POPUP_TYPE_T\0"
+    "SETTINGS_EVT_KEY_T\0SETTINGS_DATEFORMAT_T\0"
+    "SETTINGS_DIVX_T\0SETTINGS_ENGLISH_KEYPAD_T\0"
+    "SETTINGS_KOREAN_KEYPAD_T\0"
+    "SETTINGS_ARABIC_KEYPAD_T\0"
+    "SETTINGS_CHINA_KEYPAD_T\0"
+    "SETTINGS_EUROPE_KEYPAD_T\0"
+    "SETTINGS_RUSSIAN_KEYPAD_T\0"
+    "SETTINGS_HYUNDAI_KEYPAD_T\0SETTINGS_TIME_TYPE\0"
+    "SETTINGS_VIDEO_DEFAULT_SET_SEND_T\0"
+    "SETTINGS_SEND_MOST_DISPLAY_T\0"
+    "DB_KEY_PHOTO_FRAME\0DB_KEY_PHOTO_FRAME_IMAGE\0"
+    "DB_KEY_SUMMER_TIME\0DB_KEY_GPS_TIME_SETTINGS\0"
+    "DB_KEY_DISPLAY_CLOCK_AT_AUDIO_END\0"
+    "DB_KEY_DISPLAY_CLOCK\0DB_KEY_CLOCK_TYPE\0"
+    "DB_KEY_TIME_TYPE\0DB_KEY_CALENDAR_TYPE\0"
+    "DB_KEY_LANGUAGE_TYPE\0DB_KEY_TEMPERATURE_TYPE\0"
+    "DB_KEY_APPROVAL\0DB_KEY_LOCKREARMONITOR_DISPLAY\0"
+    "DB_KEY_LOCKREARMONITOR_FUNCTION\0"
+    "DB_KEY_VIDEO_BRIGHTNESS\0DB_KEY_VIDEO_SATURATION\0"
+    "DB_KEY_VIDEO_HUE\0DB_KEY_VIDEO_CONTRAST\0"
+    "DB_KEY_IMAGE_BRIGHTNESS\0DB_KEY_EXPOSURE\0"
+    "DB_KEY_ASPECT_RADIO\0DB_KEY_DVD_SUBTITLE_LANGUAGE\0"
+    "DB_KEY_DVD_AUDIO_LANGUAGE\0DB_KEY_DVD_ANGLE\0"
+    "DB_KEY_SOUND_BALANCE\0DB_KEY_SOUND_FADER\0"
+    "DB_KEY_SOUND_LOWTONE\0DB_KEY_SOUND_MIDTONE\0"
+    "DB_KEY_SOUND_HIGHTONE\0DB_KEY_SOUND_VOLUME_RATIO\0"
+    "DB_KEY_SOUND_POWERBASS\0DB_KEY_SOUND_POWERTREBLE\0"
+    "DB_KEY_SOUND_SURROUND\0DB_KEY_SOUND_ACTIVE\0"
+    "DB_KEY_SOUND_SPEED\0DB_KEY_SOUND_BEEP\0"
+    "DB_KEY_SOUND_VEQ\0DB_KEY_VOICE_VOICECOMMAND\0"
+    "DB_KEY_KEYPAD\0DB_KEY_WINDOWS_INTERLOCKING\0"
+    "DB_KEY_DISTANCE_UNIT\0DB_KEY_APPROACH_SENSOR\0"
+    "DB_KEY_QUANTUMLOGIC\0DB_KEY_DATEFORMAT_TYPE\0"
+    "DB_KEY_DIVX_REG_STATE\0DB_KEY_VIDEO_SCREENSETTINGS\0"
+    "DB_KEY_FRONT_SCREENBRIGHTNESS\0"
+    "DB_KEY_REAR_SCREENBRIGHTNESS\0"
+    "DB_KEY_FIRST_CAPITAL\0DB_KEY_ENGLISH_KEYPAD\0"
+    "DB_KEY_KOREAN_KEYPAD\0DB_KEY_ARABIC_KEYPAD\0"
+    "DB_KEY_CHINA_KEYPAD\0DB_KEY_EUROPE_KEYPAD\0"
+    "DB_KEY_RUSSIAN_KEYPAD\0DB_KEY_CURRENT_REGION\0"
+    "DB_KEY_AUX_VIDEOIN\0DB_KEY_BT_VOLUME_LEVEL\0"
+    "DB_KEY_BT_RINGTONE\0DB_KEY_BL_VOLUME_LEVEL\0"
+    "DB_KEY_BL_RINGTONE\0DB_KEY_AUTO_TIMEZONE\0"
+    "DB_KEY_AUTO_TIMEZONE_SET\0"
+    "DB_KEY_SUMMER_TIME_SET\0DB_KEY_VR_VOLUME_LEVEL\0"
+    "DB_KEY_VR_PHONE_PRIORITY\0DB_KEY_REAR_ON\0"
+    "DB_KEY_HYUNDAY_KEYPAD\0DB_KEY_SCROLL_TICKER\0"
+    "DB_KEY_LREAR\0DB_KEY_RREAR\0"
+    "DB_KEY_VOICE_APPLE_SIRI\0DB_KEY_VIP_SOUND\0"
+    "DB_KEY_RESET_ALL_COMPLETE\0DB_KEY_MAX\0"
+    "SETTINGS_LANGUAGE_UNKNOWN\0"
+    "SETTINGS_LANGUAGE_EN\0SETTINGS_LANGUAGE_KO\0"
+    "SETTINGS_LANGUAGE_ZH_MA\0SETTINGS_LANGUAGE_ZH_CN\0"
+    "SETTINGS_LANGUAGE_PT\0SETTINGS_LANGUAGE_EN_UK\0"
+    "SETTINGS_LANGUAGE_EN_US\0SETTINGS_LANGUAGE_FR\0"
+    "SETTINGS_LANGUAGE_IT\0SETTINGS_LANGUAGE_DE\0"
+    "SETTINGS_LANGUAGE_ES\0SETTINGS_LANGUAGE_RU\0"
+    "SETTINGS_LANGUAGE_NL\0SETTINGS_LANGUAGE_SV\0"
+    "SETTINGS_LANGUAGE_PL\0SETTINGS_LANGUAGE_TR\0"
+    "SETTINGS_LANGUAGE_CS\0SETTINGS_LANGUAGE_DA\0"
+    "SETTINGS_LANGUAGE_SK\0SETTINGS_LANGUAGE_AR\0"
+    "SETTINGS_LANGUAGE_FR_NA\0SETTINGS_LANGUAGE_ES_NA\0"
+    "SETTINGS_EVT_KEY_STATUS_PRESSED\0"
+    "SETTINGS_EVT_KEY_STATUS_RELEASED\0"
+    "SETTINGS_DISTANCE_KM\0SETTINGS_DISTANCE_MILE\0"
+    "SETTINGS_DISPLAY_FRONT\0SETTINGS_DISPLAY_REAR\0"
+    "SETTINGS_DISPLAY_NONE\0"
+    "SETTINGS_RESET_SOUND_SETTINGS\0"
+    "SETTINGS_RESET_SCREEN_SETTINGS\0"
+    "SETTINGS_RESET_GENERAL_SETTINGS\0"
+    "SETTINGS_RESET_NAVI_SETTINGS\0"
+    "SETTINGS_RESET_BT_SETTINGS\0"
+    "SETTINGS_CONFIRM_FORMAT_POPUP\0"
+    "SETTINGS_DVD_POPUP_TYPE\0"
+    "SETTINGS_TIME_PICKER_POPUP\0"
+    "SETTINGS_GPSTIME_POPUP\0"
+    "SETTINGS_VR_NOT_SUPPORT_POPUP\0"
+    "SETTINGS_JUKEBOX_IMAGE_DISABLE\0"
+    "SETTINGS_DRS_MESSAGE_POPUP\0"
+    "SETTINGS_TOAST_RESET_START\0"
+    "SETTINGS_TOAST_RESET_COMPLETE\0"
+    "SETTINGS_TOAST_FORMAT_START\0"
+    "SETTINGS_TOAST_FORMAT_COMPLETE\0"
+    "SETTINGS_TOAST_LANGUAGE_CHANGING\0"
+    "SETTINGS_TOAST_TIME_SETTING_COMPLETE\0"
+    "SETTINGS_TOAST_DAYLIGHT_SAVINGS_TIME_CHANGING\0"
+    "SETTINGS_EVT_KEY_BACK\0"
+    "SETTINGS_DATEFORMAT_YYYYMMDD_DASH\0"
+    "SETTINGS_DATEFORMAT_MMDDYYYY_DASH\0"
+    "SETTINGS_DATEFORMAT_DDMMYYYY_DASH\0"
+    "SETTINGS_DATEFORMAT_YYYYMMDD_SLASH\0"
+    "SETTINGS_DATEFORMAT_MMDDYYYY_SLASH\0"
+    "SETTINGS_DATEFORMAT_DDMMYYYY_SLASH\0"
+    "SETTINGS_DATEFORMAT_YYYYMMDD_DOT\0"
+    "SETTINGS_DATEFORMAT_MMDDYYYY_DOT\0"
+    "SETTINGS_DATEFORMAT_DDMMYYYY_DOT\0"
+    "SETTINGS_DIVX_REG\0SETTINGS_DIVX_DEREG\0"
+    "SETTINGS_ENGLISH_KEYPAD_QWERTY\0"
+    "SETTINGS_ENGLISH_KEYPAD_ABCD\0"
+    "SETTINGS_KOREAN_KEYPAD_QWERTY\0"
+    "SETTINGS_KOREAN_KEYPAD_LETTER\0"
+    "SETTINGS_ARABIC_QWERTY\0SETTINGS_ARABIC_TYPE2\0"
+    "SETTINGS_CHINA_PINYIN\0SETTINGS_CHINA_VOCAL_SOUND\0"
+    "SETTINGS_CHINA_HAND_WRITING\0"
+    "SETTINGS_EUROPE_ENGLISH_QWERTY\0"
+    "SETTINGS_EUROPE_ENGLISH_ABC\0"
+    "SETTINGS_EUROPE_QWERTZ\0SETTINGS_EUROPE_AZERTY\0"
+    "SETTINGS_RUSSIAN_CYRILLIC_QWERTY\0"
+    "SETTINGS_RUSSIAN_CYRILLIC_ABC\0"
+    "SETTINGS_HYUNDAI_KOREAN\0"
+    "SETTINGS_HYUNDAI_ENGLISH_LATIN\0"
+    "SETTINGS_HYUNDAI_ARABIC\0SETTINGS_HYUNDAI_CHINA\0"
+    "SETTINGS_HYUNDAI_EUROPE\0SETTINGS_TIME_TYPE_AM\0"
+    "SETTINGS_TIME_TYPE_PM\0SETTINGS_VDS_S_ALL\0"
+    "SETTINGS_VDS_S_ADJUST_SCREEN\0"
+    "SETTINGS_VDS_S_LCD_BRIGHTNESS\0"
+    "SETTINGS_VDS_S_ILLUMINATION\0"
+    "SETTINGS_VDS_S_VIDEO_RATIO\0"
+    "SETTINGS_VDS_S_DISPLAY_ONOFF\0"
+    "SETTINGS_VDS_S_INVALID\0SETTINGS_SMD_FRONT\0"
+    "SETTINGS_SMD_LREAR\0SETTINGS_SMD_RREAR\0"
+    "SETTINGS_SMD_ALL\0"
+};
+
+void SettingsDef::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
+{
+    Q_UNUSED(_o);
+    Q_UNUSED(_id);
+    Q_UNUSED(_c);
+    Q_UNUSED(_a);
+}
+
+const QMetaObjectExtraData SettingsDef::staticMetaObjectExtraData = {
+    0,  qt_static_metacall 
+};
+
+const QMetaObject SettingsDef::staticMetaObject = {
+    { &QObject::staticMetaObject, qt_meta_stringdata_SettingsDef,
+      qt_meta_data_SettingsDef, &staticMetaObjectExtraData }
+};
+
+#ifdef Q_NO_DATA_RELOCATION
+const QMetaObject &SettingsDef::getStaticMetaObject() { return staticMetaObject; }
+#endif //Q_NO_DATA_RELOCATION
+
+const QMetaObject *SettingsDef::metaObject() const
+{
+    return QObject::d_ptr->metaObject ? QObject::d_ptr->metaObject : &staticMetaObject;
+}
+
+void *SettingsDef::qt_metacast(const char *_clname)
+{
+    if (!_clname) return 0;
+    if (!strcmp(_clname, qt_meta_stringdata_SettingsDef))
+        return static_cast<void*>(const_cast< SettingsDef*>(this));
+    return QObject::qt_metacast(_clname);
+}
+
+int SettingsDef::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
+{
+    _id = QObject::qt_metacall(_c, _id, _a);
+    if (_id < 0)
+        return _id;
+    return _id;
+}
+QT_END_MOC_NAMESPACE
